@@ -1,0 +1,70 @@
+<Label>
+    font_size : 32
+    
+<TextInput>
+    size_hint : (.4, .10)
+
+<MyLayout>
+    canvas.before:
+        Color:
+            rgb: (166/256,161/256,148/256,0)
+        Rectangle: 
+            pos : self.pos
+            size : self.size
+
+    FloatLayout:
+        size : root.width, root.height
+
+        Label:
+            text : "Habits "
+            color : 0,0,0
+            bold: True
+            size_hint : (1,.1)
+            text_size : self.size
+            pos_hint: {"x": .125, "top":1}
+
+        TextInput:
+            pos_hint: {"x" : .02, "top": .9}
+            text_size : self.size
+        Label:
+            text : "Result"
+            color : 0,0,0
+            bold: True
+            size_hint : (1,.1) 
+            text_size : self.size
+            pos_hint: {"x" : .5, "top": 1} 
+
+        Spinner:
+            id: spinner_id
+            text : " "
+            values : ["Yes", "No"]
+            size_hint : (.5, .1)
+            pos_hint: {"x" : .1, "top" : .5}
+            on_text : root.spinner_clicked(spinner_id.text)
+
+        Label:
+            text: "Total Points"
+            color: 0,0,0
+            bold: True
+            text_size : self.size
+            pos_hint : {"x" : .75, "top" : 1}
+        # Spinner: 
+        #     id : spinner_id
+        #     text : ""
+        #     values : ["Standard", " Keto"]
+        #     size_hint : (.4,.1)
+        #     pos_hint: {"x": .10, "top" : .9}
+        #     on_text : root.spinner_clicked(spinner_id.text)
+
+
+
+        
+
+    
+        
+                
+               
+      
+
+            
+       
